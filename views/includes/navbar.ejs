@@ -18,34 +18,48 @@
     padding:0.5rem 3rem;
     font-size: 1rem;
   }
+
+  @media  (max-width: 413px) {
+    .container-fluid{
+      font-weight: 700;
+      z-index: 1;
+    
+    }
+       .pd-1{
+        background-color: rgb(134, 120, 236);
+        border-radius: 3px;
+      padding:10px 10px;
+       }
+  }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light">
+<nav  class="navbar navbar-expand-md bg-body-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <div class="collapse  navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- <a class="nav-link" href="/">Home</a> -->
-          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link pd-1 " href="/listings">Explore</a>
         </div>
         <!-- search  -->
-        <div class="navbar-nav ms-auto">
+        <div class="navbar-nav nav-bg-color ms-auto">
           <form class="d-flex" role="search">
-            <input type="search" class="form-control search-inp me-2" placeholder="Search destinations">
+            <input type="search" class="form-control pd-1 search-inp me-2" placeholder="Search destinations">
             <button class=" btn search-btn" type="submit" >
               <i class="fa-solid fa-magnifying-glass"></i>search
             </button>
           </form>
         </div>
 
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <div class="navbar-nav pd-1nav-bg-color ms-auto">
+          <a class="nav-link pd-1" href="/listings/new">+Airbnb your home</a>
           <% if(!currUser) {%>
-            <a class="nav-link btn btn-primary" href="/signup"><b>SignUp</b></a>
-            <a class="nav-link btn btn-primary" href="/login"><b>Login</b></a>
+            <a class="nav-link pd-1 btn btn-primary" href="/signup"><b>SignUp</b></a>
+            <a class="nav-link pd-1 btn btn-primary" href="/login"><b>Login</b></a>
             
           <% } %>
           <% if(currUser) {%>

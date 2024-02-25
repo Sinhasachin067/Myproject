@@ -31,10 +31,15 @@
         display: flex;
         align-items: center;
     }
-</style>
 
-        
-        <div id="filters">
+    @media  (max-width: 413px) {
+        #filters div:nth-child(2n){
+        display: none;
+      }
+   }
+</style>
+    
+        <div id="filters" class=" ">
             <div class="filter">
                <div> <i class="fa-solid fa-fire"></i></div>
                  <p> Trending</p>
@@ -77,6 +82,10 @@
             <div class="filter">
                  <div> <i class="fa-solid fa-ship"></i></div>
                  <p> Boats</p>
+            </div>
+            <div class="filter">
+                <div> <i class="fa-brands fa-cow"></i></div>
+                 <p> Farms</p>
             </div>
              
 
