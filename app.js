@@ -20,10 +20,10 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
-// const dbUrl = process.env.ATLAUSDB_URL;
+// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
+const dbUrl = process.env.ATLAUSDB_URL;
 async function main() {
-  await mongoose.connect(MONGO_URL); //use->   dbUrl
+  await mongoose.connect(dbUrl); //use->   dbUrl  MONGO_URL
 }
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -41,7 +41,7 @@ main()
   });
 
 const store = MongoStore.create({
-  mongoUrl: MONGO_URL, // dbUrl
+  mongoUrl: dbUrl, // dbUrl  MONGO_URL
   crypto: {
     secret: process.env.SECRET,
   },
