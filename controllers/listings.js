@@ -72,7 +72,7 @@ module.exports.updateListing = async (req, res) => {
     listing.image = { url, filename };
     await listing.save();
   }
-  req.flash("success", "listing updated");
+  req.flash("success", "place updated");
   res.redirect(`/listings/${id}`);
 };
 
