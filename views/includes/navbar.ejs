@@ -1,4 +1,9 @@
 <style>
+    .btn{
+    margin: 1px;
+    border:2px outset #fe424d;
+    border-radius: 10px;
+  }
   .search-btn{
     background-color:#fe424d;
     color:#ffffff;
@@ -45,6 +50,8 @@
           <!-- <a class="nav-link" href="/">Home</a> -->
           <a class="nav-link pd-1 " href="/listings">Explore</a>
         </div>
+         <!-- profile -->
+         &nbsp;<h3>Hii user!</h3>
         <!-- search  -->
         <div class="navbar-nav nav-bg-color ms-auto">
           <form class="d-flex" role="search">
@@ -56,6 +63,7 @@
         </div>
 
         <div class="navbar-nav pd-1nav-bg-color ms-auto">
+          <a class="nav-link pd-1 btn btn-primary" href="/listings/about">About</a>
           <a class="nav-link pd-1 btn btn-primary" href="/listings/new">+Add Destination</a>
           <% if(!currUser) {%>
             <a class="nav-link pd-1 btn btn-primary" href="/signup"><b>SignUp</b></a>
