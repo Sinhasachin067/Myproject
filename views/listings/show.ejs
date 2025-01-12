@@ -26,21 +26,19 @@
                             <%= listing.country %> <br>
                                 </p>
             </div>
-        </div>
 
-        <div class="btns mt-3">
-            <a href="/listings/booking"><button class="btn btn-success">Book Now</button> </a>
-            <% if(currUser && currUser._id.equals(listing.owner._id)){ %>
-         
-              <a class="btn btn-dark  offset-3 edit-btn" href="/listings/<%=listing._id%>/edit">Edit</a>
-              
-              <form method="post" action="/listings/<%=listing._id %>?_method=DELETE">
-                  <button class="btn btn-dark offset-5">Delete</button>
-              </form>
-           <% } %>
-          </div>
-
-
+            <div class="btns mt-3">
+                <a href="/listings/booking"><button class="btn btn-success">Book Now</button> </a>
+                <% if(currUser && currUser._id.equals(listing.owner._id)){ %>
+             
+                  <a class="btn btn-dark  offset-3 edit-btn" href="/listings/<%=listing._id%>/edit">Edit</a>
+                  
+                  <form method="post" action="/listings/<%=listing._id %>?_method=DELETE">
+                      <button class="btn btn-dark offset-5">Delete</button>
+                  </form>
+               <% } %>
+              </div>
+       </div>
                 <div class="col-8 mb-3 mt-3 offset-3 listing-card">
 
                     <% if(currUser){ %>
