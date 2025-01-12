@@ -28,6 +28,9 @@ router.get("/new", isLoggedIn, listingController.renderNewForm);
 //New About
 router.get("/about", listingController.renderAbout);
 
+//booking
+router.get("/booking", isLoggedIn, listingController.renderBooking);
+
 router
   .route("/:id")
   .get(wrapAsync(listingController.showListing))

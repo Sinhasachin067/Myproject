@@ -1,0 +1,239 @@
+
+<% layout("/layouts/boilerplate") %>
+    
+     <style>
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* background: linear-gradient(135deg, #f06292, #ba68c8); */
+    display:grid;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2rem;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f3e5f5;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #ba68c8;
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+input[type="date"],
+input[type="month"] {
+    background: #fff;
+    color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #ba68c8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f06292;
+}
+
+textarea {
+    resize: vertical;
+    background: #fff;
+    color: #333;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #ba68c8;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+     </style>
+
+
+    <div class="form-container">
+        <h1>SMART TOURISM DESTINATION</h1>
+        <form id="bookingForm">
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="John Doe" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="johndoe@example.com" />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 890" />
+            </fieldset>
+
+            <!-- Booking Information Section -->
+            <fieldset>
+                <legend>Booking Information</legend>
+                <label for="checkinDate">Check-in Date:</label>
+                <input type="date" id="checkinDate" name="checkinDate" required />
+
+                <label for="checkoutDate">Check-out Date:</label>
+                <input type="date" id="checkoutDate" name="checkoutDate" required />
+
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" required min="1" max="10" placeholder="1" />
+            </fieldset>
+
+            <!-- Room Type Selection Section -->
+            <fieldset>
+                <legend>Room Type</legend>
+                <label for="roomType">Select Room Type:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </fieldset>
+
+            <!-- Special Requests Section -->
+            <fieldset>
+                <legend>Special Requests</legend>
+                <label for="specialRequests">Any Special Requests?</label>
+                <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="E.g., Late check-in, Non-smoking room"></textarea>
+            </fieldset>
+
+            <!-- Payment Information Section -->
+            <fieldset>
+                <legend>Payment Information</legend>
+                <label for="cardName">Name on Card:</label>
+                <input type="text" id="cardName" name="cardName" required placeholder="John Doe" />
+
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required placeholder="1234 5678 9876 5432" />
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required />
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required placeholder="123" />
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitButton">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+        // script.js
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    // Collecting form data
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const checkinDate = document.getElementById("checkinDate").value;
+    const checkoutDate = document.getElementById("checkoutDate").value;
+    const guests = document.getElementById("guests").value;
+    const roomType = document.getElementById("roomType").value;
+    const cardName = document.getElementById("cardName").value;
+    const cardNumber = document.getElementById("cardNumber").value;
+    const expiryDate = document.getElementById("expiryDate").value;
+    const cvv = document.getElementById("cvv").value;
+
+    // Basic form validation
+    if (!fullName || !email || !phone || !checkinDate || !checkoutDate || !guests || !roomType || !cardName || !cardNumber || !expiryDate || !cvv) {
+        alert("Please fill in all the required fields.");
+        return;
+    }
+
+    // Check if check-out date is after check-in date
+    if (new Date(checkinDate) >= new Date(checkoutDate)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    // Validate card number (basic check)
+    const cardNumberPattern = /^[0-9]{16}$/;
+    if (!cardNumberPattern.test(cardNumber)) {
+        alert("Please enter a valid 16-digit card number.");
+        return;
+    }
+
+    // Validate CVV (basic check)
+    const cvvPattern = /^[0-9]{3}$/;
+    if (!cvvPattern.test(cvv)) {
+        alert("Please enter a valid 3-digit CVV.");
+        return;
+    }
+
+    // If everything is valid, display a confirmation message
+    alert("Booking successful! Your room has been booked.");
+    // Optionally, you can submit the form data to a server.
+});
+
+    </script>
+

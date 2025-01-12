@@ -17,6 +17,10 @@ module.exports.renderAbout = (req, res) => {
   res.render("listings/about.ejs");
 };
 
+module.exports.renderBooking = (req, res) => {
+  res.render("listings/booking.ejs");
+};
+
 module.exports.showListing = async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id)
