@@ -1,12 +1,100 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
-    #about{
-        text-align: center;
-  
+
+a{
+    margin:3px;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+} */
+
+.about-section {
+    background-color: #fff;
+    padding: 50px 20px;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.values,
+.mission {
+    text-align: left;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #3498db;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #3498db;
+}
+
 </style>
 <div id="about" class="row">
-    <h4> WELCOME TO SMART TOURISM DESTINATION</h4>
+
+    <section class="about-section">
+        <div class="about-container">
+            <h1>Welcoem to "Smart Tourism Destination"</h1>
+            <p class="description">Welcome to the "Smart Tourism Destination"! We are dedicated to helping travelers explore the best tourist attractions around the world. Our platform provides you with all the essential information, including local attractions, hotels, restaurants, and activities to ensure you have a memorable travel experience.</p>
+            <div class="values">
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Explore:</strong> Discover new destinations and hidden gems.</li>
+                    <li><strong>Experience:</strong> Engage in local culture and activities.</li>
+                    <li><strong>Enjoy:</strong> Make the most of your travel with our recommendations.</li>
+                </ul>
+            </div>
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>We aim to connect travelers with top-notch experiences by offering comprehensive guides, detailed itineraries, and personalized recommendations. Our mission is to make travel planning easier and more exciting!</p>
+            </div>
+        </div>
+    </section>
+
+
+    <h5><a href="#">Read more</a>
+        <a href="#">Report a problem</a>
+        <a href="#">Privacy policies</a>
+        <a href="#">Term and condition</a>
+        <a href="#"></a>
+    </h5>
    
 </div>
