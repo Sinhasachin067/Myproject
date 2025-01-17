@@ -2,11 +2,7 @@
 <% layout("/layouts/boilerplate") %>
     
      <style>
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -15,18 +11,22 @@ body {
     /* justify-content: center; */
     align-items: center;
     height: 100vh;
-    color: #fff;
+    color: #0a0a0a;
 }
 
 .form-container {
-    background: rgba(255, 255, 255, 0.9);
+  
+    background:rgb(5, 102, 143);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(212, 91, 91, 0.2);
+    width: auto;
+    /* max-width: 600px; */
 }
-
+.bookingForm{
+display: grid;
+grid-template-columns: auto auto auto;
+}
 h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -38,14 +38,19 @@ fieldset {
     border: none;
     margin-bottom: 20px;
     padding: 15px;
-    background: #f3e5f5;
+    
+background: #c85dd6;
+
     border-radius: 8px;
+}
+fieldset:hover{
+    background: #acc424;
 }
 
 legend {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #ba68c8;
+    color: #280e91;
     padding: 5px 10px;
     background-color: #fff;
     border-radius: 5px;
@@ -65,6 +70,9 @@ input, select, textarea {
     border: 1px solid #ddd;
     font-size: 1rem;
 }
+fieldset{
+    margin: 3px;
+}
 
 input[type="date"],
 input[type="month"] {
@@ -76,7 +84,7 @@ button {
     width: 100%;
     padding: 12px;
     font-size: 1.2rem;
-    background-color: #ba68c8;
+    background-color: #650776;
     color: white;
     border: none;
     border-radius: 5px;
@@ -85,7 +93,7 @@ button {
 }
 
 button:hover {
-    background-color: #f06292;
+    background-color: #ab1547;
 }
 
 textarea {
@@ -101,7 +109,7 @@ input[type="date"]:focus,
 input[type="month"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #ba68c8;
+    border-color: #b113cd;
     outline: none;
 }
 
@@ -114,13 +122,16 @@ textarea:focus {
         font-size: 1.6rem;
     }
 }
+h1{
+    color:white;
+}
 
      </style>
 
 
     <div class="form-container">
         <h1>SMART TOURISM DESTINATION</h1>
-        <form id="bookingForm">
+        <form id="bookingForm" class="bookingForm">
             <!-- Personal Information Section -->
             <fieldset>
                 <legend>Personal Information</legend>
@@ -163,6 +174,22 @@ textarea:focus {
                 <legend>Special Requests</legend>
                 <label for="specialRequests">Any Special Requests?</label>
                 <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="E.g., Late check-in, Non-smoking room"></textarea>
+            </fieldset>
+
+              <!-- Special Information Section -->
+              <fieldset>
+                <legend>Special Service</legend>
+                <label for="cardName">Food type:</label>
+                <input type="text" id="cardName" name="cardName" required placeholder="Indian" />
+
+                <label for="cardNumber">Exercise:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required placeholder="With/Without Spa" />
+
+                <label for="expiryDate">Gym:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required placeholder="With or without trainer  " />
+
+                <label for="cvv">Transportation:</label>
+                <input type="text" id="cvv" name="cvv" required placeholder="2 or 4 wheeler" />
             </fieldset>
 
             <!-- Payment Information Section -->
